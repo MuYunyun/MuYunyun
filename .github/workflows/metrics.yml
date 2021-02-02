@@ -20,45 +20,45 @@ jobs:
       # 🖼️ TEMPLATES
       # ======================================================================================
 
-      # Classic template example
-      - name: 📗 Classic template
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.classic.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: header, repositories
-          plugin_lines: yes
-          # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
-          use_prebuilt_image: master # ⚠️ DO NOT USE THIS OPTION!
+      # # Classic template example
+      # - name: 📗 Classic template
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     filename: metrics.classic.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     base: header, repositories
+      #     plugin_lines: yes
+      #     # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
+      #     use_prebuilt_image: master # ⚠️ DO NOT USE THIS OPTION!
 
       # Repository template example, with some plugins enabled
       # Notice how repository name is passed through "query" option
-      - name: 📘 Repository template
-        uses: lowlighter/metrics@master
-        with:
-          template: repository
-          filename: metrics.repository.svg
-          token: ${{ secrets.METRICS_BOT_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          user: lowlighter
-          query: '{"repo":"metrics"}'
-          plugin_lines: yes
-          plugin_followup: yes
-          plugin_projects: yes
-          plugin_projects_repositories: lowlighter/metrics/projects/1
-          # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
+      # - name: 📘 Repository template
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     template: repository
+      #     filename: metrics.repository.svg
+      #     token: ${{ secrets.METRICS_BOT_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     user: lowlighter
+      #     query: '{"repo":"metrics"}'
+      #     plugin_lines: yes
+      #     plugin_followup: yes
+      #     plugin_projects: yes
+      #     plugin_projects_repositories: lowlighter/metrics/projects/1
+      #     # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
 
-      # Terminal template example
-      - name: 📙 Terminal template
-        uses: lowlighter/metrics@master
-        with:
-          template: terminal
-          filename: metrics.terminal.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: header, metadata
-          # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
+      # # Terminal template example
+      # - name: 📙 Terminal template
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     template: terminal
+      #     filename: metrics.terminal.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     base: header, metadata
+      #    # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
 
       # ======================================================================================
       # 🧩 PLUGINS
