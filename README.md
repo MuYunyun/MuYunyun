@@ -13,5 +13,3 @@
 --->
 
 ![MuYunyun's github stats](https://github-readme-stats-tawny.vercel.app/api?username=MuYunyun&show_icons=true&hide_border=true)
-
-![Metrics](https://github.com/MuYunyun/MuYunyun/blob/master/metrics.additional.svg)

@@ -38,33 +38,6 @@ jobs:
       # ======================================================================================
       # 📌 Starred topics
 
-      # Display starred topics (as labels)
-      - name: 📌 Topics plugin
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.topics.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_topics: yes
-          plugin_topics_limit: 12
-          # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
-
-
-      # Display starred topics (as icons)
-      # Note that only topics with an icon will be displayed (most of majors topics have one though)
-      - name: 📌 Topics plugin (mastered)
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.topics.mastered.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_topics: yes
-          plugin_topics_limit: 0
-          plugin_topics_mode: mastered
-          # plugins_errors_fatal: ${{ github.repository == 'lowlighter/lowlighter' }}
-
       # ======================================================================================
       # 🐤 Latest tweets
 
