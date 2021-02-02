@@ -49,26 +49,26 @@ jobs:
       #     config_padding: 10%
       #     use_prebuilt_image: master
 
-      - name: Personal metrics (additional)
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.additional.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          # plugin_languages: yes
-          # plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot
-          # plugin_languages_skipped: lowlighter
-          plugin_stargazers: yes
-          # plugin_stars: yes
-          # plugin_stars_limit: 3
-          config_timezone: Europe/Paris
-          config_order: languages, pagespeed, habits, stargazers, stars
-          use_prebuilt_image: master
+      # - name: Personal metrics (additional)
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     filename: metrics.additional.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     base: ""
+      #     plugin_habits: yes
+      #     plugin_habits_from: 200
+      #     plugin_habits_facts: no
+      #     plugin_habits_charts: yes
+      #     # plugin_languages: yes
+      #     # plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot
+      #     # plugin_languages_skipped: lowlighter
+      #     plugin_stargazers: yes
+      #     # plugin_stars: yes
+      #     # plugin_stars_limit: 3
+      #     config_timezone: Europe/Paris
+      #     config_order: languages, pagespeed, habits, stargazers, stars
+      #     use_prebuilt_image: master
 
       # # Note the job below use a bot token with "public_repo" scope
       # - name: Personal projects
@@ -146,53 +146,53 @@ jobs:
           config_timezone: Europe/Paris
           use_prebuilt_image: master
 
-      # Display coding habits and recent activity
-      # Don't forget to setup timezone for accurate metrics
-      - name: Habits plugin
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.habits.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-          plugins_errors_fatal: yes
-          config_timezone: Europe/Paris
-          use_prebuilt_image: master
+      # # Display coding habits and recent activity
+      # # Don't forget to setup timezone for accurate metrics
+      # - name: Habits plugin
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     filename: metrics.plugin.habits.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     base: ""
+      #     plugin_habits: yes
+      #     plugin_habits_facts: yes
+      #     plugin_habits_charts: yes
+      #     plugins_errors_fatal: yes
+      #     config_timezone: Europe/Paris
+      #     use_prebuilt_image: master
 
-      # Display coding habits and recent activity (only facts section)
-      # Don't forget to setup timezone for accurate metrics
-      - name: Habits plugin (facts)
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.habits.facts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_facts: yes
-          plugin_habits_charts: no
-          plugins_errors_fatal: yes
-          config_timezone: Europe/Paris
-          use_prebuilt_image: master
+      # # Display coding habits and recent activity (only facts section)
+      # # Don't forget to setup timezone for accurate metrics
+      # - name: Habits plugin (facts)
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     filename: metrics.plugin.habits.facts.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     base: ""
+      #     plugin_habits: yes
+      #     plugin_habits_facts: yes
+      #     plugin_habits_charts: no
+      #     plugins_errors_fatal: yes
+      #     config_timezone: Europe/Paris
+      #     use_prebuilt_image: master
 
-      # Display coding habits and recent activity (only charts section)
-      # Don't forget to setup timezone for accurate metrics
-      - name: Habits plugin (charts)
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.habits.charts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          plugins_errors_fatal: yes
-          config_timezone: Europe/Paris
-          use_prebuilt_image: master
+      # # Display coding habits and recent activity (only charts section)
+      # # Don't forget to setup timezone for accurate metrics
+      # - name: Habits plugin (charts)
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     filename: metrics.plugin.habits.charts.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     base: ""
+      #     plugin_habits: yes
+      #     plugin_habits_facts: no
+      #     plugin_habits_charts: yes
+      #     plugins_errors_fatal: yes
+      #     config_timezone: Europe/Paris
+      #     use_prebuilt_image: master
 
       # Display number of line changed
       # Note that :
@@ -244,7 +244,7 @@ jobs:
       #     use_prebuilt_image: master
 
       # Display starred topics (as labels)
-      - name: Topics plugin
+      - name: 📌 Topics plugin
         uses: lowlighter/metrics@master
         with:
           filename: metrics.plugin.topics.svg
@@ -253,14 +253,12 @@ jobs:
           base: ""
           plugin_topics: yes
           plugin_topics_limit: 12
-          plugins_errors_fatal: yes
-          config_timezone: Europe/Paris
-          use_prebuilt_image: master
+          plugins_errors_fatal: ${{ github.repository == 'MuYunyun/MuYunyun' }}
+
 
       # Display starred topics (as icons)
-      # Note that :
-      # - Only topics with an icon will be displayed (most of majors topics have one anyway)
-      - name: Topics plugin (mastered)
+      # Note that only topics with an icon will be displayed (most of majors topics have one though)
+      - name: 📌 Topics plugin (mastered)
         uses: lowlighter/metrics@master
         with:
           filename: metrics.plugin.topics.mastered.svg
@@ -268,10 +266,9 @@ jobs:
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           base: ""
           plugin_topics: yes
+          plugin_topics_limit: 0
           plugin_topics_mode: mastered
-          plugins_errors_fatal: yes
-          config_timezone: Europe/Paris
-          use_prebuilt_image: master
+          plugins_errors_fatal: ${{ github.repository == 'MuYunyun/MuYunyun' }}
 
       # Display active projects
       # Note that :
@@ -311,17 +308,17 @@ jobs:
           use_prebuilt_image: master
 
       # Display your stargazers evolutions
-      - name: Stargazers plugin
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.stargazers.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_stargazers: yes
-          plugins_errors_fatal: yes
-          config_timezone: Europe/Paris
-          use_prebuilt_image: master
+      # - name: Stargazers plugin
+      #   uses: lowlighter/metrics@master
+      #   with:
+      #     filename: metrics.plugin.stargazers.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
+      #     base: ""
+      #     plugin_stargazers: yes
+      #     plugins_errors_fatal: yes
+      #     config_timezone: Europe/Paris
+      #     use_prebuilt_image: master
 
       # Display recent activity metrics
       - name: Activity plugin
